@@ -1,0 +1,29 @@
+Página para ser ignorada (anotações pessoais)
+
+----------------------------------------------------------------------------------------------
+
+Canva Bruna => https://www.canva.com/design/DAGDDb1FtGk/JBdNOxD-9hBuzWzpGmxSoA/view
+Drive Banco de dados => https://drive.google.com/drive/folders/1sM4nK765pAAantNCnPNbZEz68bHom00Y
+
+--------------------------------------------------------------------------------------------
+
+Animal não esquece de descomentar os imports do server.js infeliz 
+
+// const sequelize = require ('./Config/sequelize'); ainda não tem nada aqui
+// const router = require ('./routes/router');
+
+linha 3 e 4 
+
+--------------------------------------------------------------------------------------------
+
+CHECK:
+server.js - ok
+config/database.js - ok
+config/sequelize - ok
+models/usuarios.js - ok
+controllers/usuario.js - ok
+routes/router.js - ok
+
+// tem mais coisa para adicionar além do script que esta no canva
+
+--------------------------------------------------------------------------------------------
