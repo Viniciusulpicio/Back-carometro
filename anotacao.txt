@@ -1,8 +1,8 @@
-Página para ser ignorada (anotações pessoais)
+Página para ser ignorada (anotações pessoais) - node server
 
 ----------------------------------------------------------------------------------------------
 
-Canva Bruna => https://www.canva.com/design/DAGDDb1FtGk/JBdNOxD-9hBuzWzpGmxSoA/view
+Canva Bruna => https://www.canva.com/design/DAGDDb1FtGk/i-GImOx1kUQg1G_MirUnTw/view?utm_content=DAGDDb1FtGk&utm_campaign=designshare&utm_medium=link&utm_source=editor
 Drive Banco de dados => https://drive.google.com/drive/folders/1sM4nK765pAAantNCnPNbZEz68bHom00Y
 
 --------------------------------------------------------------------------------------------
@@ -27,3 +27,5 @@ routes/router.js - ok
 // tem mais coisa para adicionar além do script que esta no canva
 
 --------------------------------------------------------------------------------------------
+
+Funcionando normal agr, ggzada

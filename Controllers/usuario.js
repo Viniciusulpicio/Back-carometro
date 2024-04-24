@@ -1,3 +1,4 @@
+const { where } = require('sequelize');
 const Usuario = require ('../Models/usuarios');
 
 exports.getAll = async(req, res) => {
@@ -13,11 +14,11 @@ exports.getById = async (req, res) => {
 };
 
 exports.createUsuario = async (req,res) => {
-    const usuarioCadastrado = await Usuario.findOne({cpf: req.body.cpf});
+    const usuarioCadastrado = await Usuario.findOne({ where: {cpf: req.body.cpf}});
     // Verificação duplicidade do usuario cadastrado
-    // if (usuarioCadastrado) {
-    //     return res.send("Já existe um usuario cadastrado com esse CPF.")
-    // }
+    if (usuarioCadastrado) {
+        return res.send("Já existe um usuario cadastrado com esse CPF.")
+    }
     const usuarioCriado = await Usuario.create(req.body)
     console.log("usuarioCriado", usuarioCriado)
     return res.send("oi")

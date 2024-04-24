@@ -20,7 +20,7 @@ const Usuario = sequelize.define("Usuarios", {
     bairro: Sequelize.STRING,
     cidade: Sequelize.STRING,
     estado: Sequelize.STRING,
-    imagem: Sequelize.STRING,
+    foto: Sequelize.STRING,
     Tipos_Usuarios_idTipos_Usuarios: Sequelize.NUMBER,
 
 },
