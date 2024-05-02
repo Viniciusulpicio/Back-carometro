@@ -2,7 +2,7 @@
 const express = require ('express');
 const { Sequelize } = require('sequelize');
 const sequelize = require ('./Config/sequelize');   
-const router = require ('./routes/router');
+const router = require ('./Routes/router')
 require('dotenv').config();
 
 // Testar a conexão com o banco de dados 

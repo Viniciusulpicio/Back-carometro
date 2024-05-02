@@ -4,21 +4,21 @@
 const express = require('express');
 const router = express.Router();
 const usuarioController = require("../Controllers/usuario")
+const turmaController = require("../Controllers/turmas")
 
-// retorna todos os usuarios 
+//                                       R O T A S usuario
 router.get('/usuario', usuarioController.getAll)
 router.get('/usuario/:id', usuarioController.getById)
 
 // cria um usuario passando informações no body 
 router.post('/usuario', usuarioController.createUsuario)
 
-// INSERIR OUTRAS ROTAS --> 
-/* router.get('/turmas', turmasController.getAll)
-router.get('/turmas/:id', turmasController.getById) */
 
-/* router.get('/turmas', turmasController.getAll)
-router.get('/turmas/:id', turmasController.getById) */
+//                                       R O T A S turmas
+router.get('/turma', turmaController.getAll)
+router.get('/turma/:id', turmaController.getById) 
 
-/* router.get('/usuario', usuarioController.listarUsuarios) */
+// cria um usuario passando informações no body 
+router.post('/turma', turmaController.createTurma) 
 
 module.exports = router;

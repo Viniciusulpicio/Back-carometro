@@ -21,6 +21,6 @@ exports.createUsuario = async (req,res) => {
     }
     const usuarioCriado = await Usuario.create(req.body)
     console.log("usuarioCriado", usuarioCriado)
-    return res.send("oi")
+    return res.send("Usuario cadastrado (deu certo viadin)")
     // res.json(usuario)
 };
