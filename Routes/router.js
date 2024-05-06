@@ -20,5 +20,6 @@ router.get('/turma/:id', turmaController.getById)
 
 // cria um usuario passando informações no body 
 router.post('/turma', turmaController.createTurma) 
+router.put('/turma/:editTurma', turmaController.updateTurma)
 
 module.exports = router;

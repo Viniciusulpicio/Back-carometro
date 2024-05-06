@@ -1,3 +1,4 @@
+const { where } = require("sequelize");
 const Turmas = require("../Models/Turmas");
 
 exports.getAll = async (req, res) =>{
@@ -21,4 +22,21 @@ exports.createTurma = async (req, res) => {
     console.log("turmasCriado", turmaCriada)
     return res.send("Turma cadastrado (deu certo viadin)")
     // res.json(usuario)
+}
+
+exports.editTurma = async (req, res) => {
+    const codigoTurma = req.params.editTurma;
+    try{
+        const turmaCadastrada = await Turmas.findOne({where: { codigo : codigoTurma}});
+        if(turmaCadastrada) {
+            delete req.body.codigo;
+
+            const [numRowsUpdate] = await Turmas.update(req.body,{
+                where: {codigo: codigoTurma}
+            });
+        }
+    }
+    catch {
+        
+    }
 }
