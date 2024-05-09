@@ -24,19 +24,32 @@ exports.createTurma = async (req, res) => {
     // res.json(usuario)
 }
 
-exports.editTurma = async (req, res) => {
-    const codigoTurma = req.params.editTurma;
-    try{
-        const turmaCadastrada = await Turmas.findOne({where: { codigo : codigoTurma}});
-        if(turmaCadastrada) {
-            delete req.body.codigo;
+exports.updateTurma = async (req, res) => {  // Cria uma função chamada updateTurma
+    const codigoTurma = req.params.codigo; // Cria uma varíavel onde se adquire informações do banco de dados
 
-            const [numRowsUpdate] = await Turmas.update(req.body,{
-                where: {codigo: codigoTurma}
+    try { // "Tente"
+        const turmaCadastrada = await Turmas.findOne({ where:{ codigo: codigoTurma }}); // 
+
+        if (turmaCadastrada) {
+
+            delete req.body.codigo // Delete como medida de segurança, pois nem toda a informação pode ser atualizada ao mesmo tempo
+
+            const [numRowsUpdated] = await Turmas.update(req.body, { // Array que faz uma contagem de nº de linha de atualização
+                where: { codigo: codigoTurma }
             });
+
+            if (numRowsUpdated > 0) { // Verifica a array
+                const turmaAtualizada = await Turmas.findOne({ where: { codigo: codigoTurma }});
+                return res.send({ message: 'Turma Atualizada com sucesso', turmacomdadosnovos: turmaAtualizada});
+            }
+            else {
+                return res.send('Turma encontrada, porém sem novos dados para atualizar')
+            }
         }
-    }
-    catch {
-        
-    }
-}
+        else {
+            return res.status(404).send('Não existe um turma cadastrada com este código.');
+        }
+    } catch (error) {
+        console.error('Erro ao atualizar turma', error);
+        return res.status(500).send('Ocorreu um erro ao atualizar turma.')
+    }}

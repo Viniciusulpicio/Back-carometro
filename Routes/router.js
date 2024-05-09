@@ -12,6 +12,7 @@ router.get('/usuario/:id', usuarioController.getById)
 
 // cria um usuario passando informações no body 
 router.post('/usuario', usuarioController.createUsuario)
+router.put('/usuario/:cpf', usuarioController.updateUsuario)
 
 
 //                                       R O T A S turmas
@@ -20,6 +21,6 @@ router.get('/turma/:id', turmaController.getById)
 
 // cria um usuario passando informações no body 
 router.post('/turma', turmaController.createTurma) 
-router.put('/turma/:editTurma', turmaController.updateTurma)
+router.put('/turma/:codigo', turmaController.updateTurma)
 
 module.exports = router;
